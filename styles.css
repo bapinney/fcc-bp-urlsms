@@ -1,0 +1,22 @@
+body {
+    background: linear-gradient(90deg, rgba(84,113,184,1) 0%, rgba(147,168,250,1) 100%);
+}
+#maincontainer {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px 2px;
+    font-family: sans-serif;
+    margin: 20px auto 0 auto;
+    padding: 15px; 
+    width: 700px;
+}
+#containerheader {
+    color:black;
+    font-size:24px;
+    text-shadow: 1px 1px 1px #404040;
+}
+#author {
+    font-family: sans-serif;
+    margin: 20px auto 0 auto;
+    text-align: center;
+}
