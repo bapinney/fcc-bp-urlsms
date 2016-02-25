@@ -1,4 +1,4 @@
-var port = 8080;
+var port = 80;
 var debug = false; //Enables some extra information to be pulled through Express
 var express = require('express');
 var app = express();
