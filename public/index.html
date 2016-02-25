@@ -3,16 +3,41 @@
     <head>
         <meta charset="UTF-8">
         <title>freeCodeCamp - URLSMS</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
         <link href="styles.css" rel="stylesheet">
     </head>
     <body>
-        <div id="maincontainer">
-            <div id="containerheader">_freeCodeCamp URL Shortener</div>
+        <div id="main-container">
+            <div id="container-header">_freeCodeCamp URL Shortener</div>
+            <div id="container-subheader">User Stories</div>
             <div>
                 <ul>
                     <li>I can pass a URL as a parameter and I will receive a shortened URL in the JSON response.</li>
+                    <li>If I pass an invalid URL that doesn't follow the valid http://www.example.com format, the JSON response will contain an error instead.</li>
+                    <li>When I visit that shortened URL, it will redirect me to my original link.</li>
                 </ul>
             </div>
+            <div id="url-pass-div">
+                <div id="url-pass-instructions">You can create a new URL by using <span id="url-format">/new/<i>(URL)</i></span> or using the input, below:</div>
+                <input id="url-input" placeholder="enter url" type="text"><button id="shorten-button">Shorten</button>
+            </div>
         </div>
+        <script type="text/javascript">
+            var doShort = function() {
+                var url2use = $("#url-input").val();
+                document.location.href = window.location.protocol + '//' + window.location.host + '/new/' + url2use;
+            };
+            $(function() { //Give the full path, to make it easier.
+                $("#url-format").html(window.location.protocol + '//' + window.location.host + '/new/<i>(url)</i>');
+                $("#url-input").keypress(function(event) {
+                    if (event.which == 13) { //Enter key
+                        doShort();
+                    }
+                });
+                $("#shorten-button").click( function() {
+                    doShort();
+                });
+            });
+        </script>
     </body>
 </html>
