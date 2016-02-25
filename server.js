@@ -5,7 +5,7 @@ var app = express();
 var MongoClient = require('mongodb').MongoClient;
 var assert = require('assert');
 var url = require('url');
-var mongoURL = process.env.MONGOURL || 'mongodb://localhost:27017/freeCodeCamp';
+var mongoURL = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/freeCodeCamp';
 
 app.use(express.static(__dirname + '/public')); //Public folder for CSS, HTML, etc.
 
