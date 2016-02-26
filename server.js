@@ -59,7 +59,8 @@ MongoClient.connect(mongoURL, function (err, db) {
             console.log("URL is valid");
             getNextURLID(inputURL, insertURLwithID, req, res);
         } else {
-            res.end("URL is not valid");
+            var rtnJSON = {error: "Invalid URL"};
+            res.end(JSON.stringify(rtnJSON));
         }
     };
 
