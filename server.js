@@ -1,4 +1,4 @@
-var port = process.env.PORT || 80;
+var port = process.env.PORT;
 var debug = false; //Enables some extra information to be pulled through Express
 var express = require('express');
 var app = express();
